@@ -25,5 +25,9 @@ Rscript raspr_score.R <input_file.csv> [output_file.csv]
 ```
 <input_file.csv>: Path to the input CSV file containing radiomic features.
 
+## Example
+```
+Rscript raspr_score.R sample_data.csv results.csv
+```
 [output_file.csv] (optional): Path to save the output CSV file with RaSPr scores and classifications.
 
