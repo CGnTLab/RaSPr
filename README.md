@@ -19,6 +19,9 @@ Install `tidyverse` if not already available:
 ```r
 install.packages("tidyverse")
 ```
+
+**NOTE**: Features must be extracted only using PyRadiomics and must be scaled using "scale" function of R.
+
 ## Usage
 To run through terminal, use this:
 ```bash
