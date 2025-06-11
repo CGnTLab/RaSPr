@@ -48,7 +48,7 @@ calculate_raspr <- function(input_file, output_file = NULL, cutoff = -0.44) {
   sample_id_col <- colnames(rf)[1]
   
   # Prepare output dataframe
-  output_df <- rf[, c(sample_id_col, features, "RaSPr_Score", "Risk_Group", "Survival_category")]
+  output_df <- rf[, c(sample_id_col,"RaSPr_Score", "Risk_Group", "Survival_category",features)]
   
   # Print preview
   print(head(output_df))
