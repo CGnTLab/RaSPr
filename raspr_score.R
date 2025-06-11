@@ -1,4 +1,4 @@
-# Required Libraries
+# -------- Required Libraries -------- #
 library(tidyverse)
 
 # -------- Function to Calculate RaSPr Score -------- #
@@ -32,13 +32,17 @@ calculate_raspr <- function(input_file, output_file = NULL, cutoff = -0.44) {
   
   # Risk classification based on cutoff
   rf$Risk_Group <- ifelse(rf$RaSPr_Score > cutoff, "High", "Low")
+  rf$Survival_category <- ifelse(rf$Risk_Group == "High", "Poor Survival", "Good Survival")
   
-  # Show first few results
-  print(head(rf[, c("RaSPr_Score", "Risk_Group")]))
+  # Prepare output: First column (assumed to be sample ID), selected features, score, and labels
+  output_df <- rf[, c(1, features, "RaSPr_Score", "Risk_Group", "Survival_category")]
+  
+  # Print preview
+  print(head(output_df))
   
   # Save if output file is provided
   if (!is.null(output_file)) {
-    write.csv(rf, output_file, row.names = FALSE)
+    write.csv(output_df, output_file, row.names = FALSE)
     cat("Results saved to:", output_file, "\n")
   }
 }
