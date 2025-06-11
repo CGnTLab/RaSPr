@@ -18,6 +18,16 @@ calculate_raspr <- function(input_file, output_file = NULL, cutoff = -0.44) {
     "wavelet.HHL_firstorder_Mean"
   )
   
+  # Check for missing features
+  missing <- setdiff(features, colnames(rf))
+  if (length(missing) > 0) {
+    cat("❌ The following required features are missing from your input CSV:\n")
+    print(missing)
+    stop("Please ensure the input CSV has all required feature columns.")
+  } else {
+    cat("✅ All required features found. Proceeding...\n")
+  }
+  
   # Corresponding coefficients
   coef <- c(
     -0.12383678, 0.08559770, 0.22513700, 0.07207891,
@@ -34,8 +44,11 @@ calculate_raspr <- function(input_file, output_file = NULL, cutoff = -0.44) {
   rf$Risk_Group <- ifelse(rf$RaSPr_Score > cutoff, "High", "Low")
   rf$Survival_category <- ifelse(rf$Risk_Group == "High", "Poor Survival", "Good Survival")
   
-  # Prepare output: First column (assumed to be sample ID), selected features, score, and labels
-  output_df <- rf[, c(1, features, "RaSPr_Score", "Risk_Group", "Survival_category")]
+  # Get name of the first column (assumed to be sample ID)
+  sample_id_col <- colnames(rf)[1]
+  
+  # Prepare output dataframe
+  output_df <- rf[, c(sample_id_col, features, "RaSPr_Score", "Risk_Group", "Survival_category")]
   
   # Print preview
   print(head(output_df))
