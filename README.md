@@ -8,6 +8,7 @@ Radiomic Survival Predictor (RaSPr) is a user-friendly tool that estimates survi
 - Command-line interface for ease of automation.
 - Optional CSV output with scores and risk group included.
 - Integrated into web-platform **[RadGLO](https://project.iith.ac.in/cgntlab/radglo/raspr.html)** for GUI based implementation.
+- Run this code only for multiple samples together, for single sample use our **[RadGLO](https://project.iith.ac.in/cgntlab/radglo/raspr.html)** platform.
 ---
 ## Dependencies
 
@@ -21,6 +22,11 @@ install.packages("tidyverse")
 ```
 
 **NOTE**: Features must be extracted only using PyRadiomics and must be scaled using "scale" function of R.
+## Feature extraction and normalization
+Use this YAML file for extracting features using PyRadiomics
+```bash
+pyradiomics path/to/XYZ_t1.nii.gz path/to/XYZ_seg.nii.gz -p pyradiomics_FE_file.yaml -o path/to/output.txt
+```
 
 ## Usage
 To run through terminal, use this:
@@ -48,3 +54,5 @@ calculate_raspr("input_file.csv", "output_file.csv")
 
 **Kavita Kundal**  
 **CG&T Lab, Indian Institute of Technology Hyderabad**
+
+contact for more details: cgntlab@gmail.com
