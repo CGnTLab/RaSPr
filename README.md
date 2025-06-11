@@ -7,8 +7,9 @@ Radiomic Survival Predictor (RaSPr) is a user-friendly tool that estimates survi
 - Classifies each row into **High** or **Low** risk groups based on a customizable cutoff.
 - Command-line interface for ease of automation.
 - Optional CSV output with scores and risk group included.
-- Integrated into web-platform **[RadGLO](https://project.iith.ac.in/cgntlab/radglo/raspr.html)** for GUI based implementation.
-- Run this code only for multiple samples together, for single sample use our **[RadGLO](https://project.iith.ac.in/cgntlab/radglo/raspr.html)** platform.
+- Seamlessly integrated into the **[RadGLO](https://project.iith.ac.in/cgntlab/radglo/raspr.html)** web platform for GUI-based execution.
+- Recommended: Use command-line version for batch analysis; use **[RadGLO](https://project.iith.ac.in/cgntlab/radglo/raspr.html)** for single-sample predictions.
+  
 ---
 ## Dependencies
 
@@ -29,7 +30,7 @@ pyradiomics path/to/XYZ_t1.nii.gz path/to/XYZ_seg.nii.gz -p pyradiomics_FE_file.
 ```
 
 ## Usage
-To run through terminal, use this:
+1. Via Command Line
 ```bash
 Rscript raspr_score.R <input_file.csv> [output_file.csv]
 ```
@@ -41,8 +42,8 @@ Rscript raspr_score.R <input_file.csv> [output_file.csv]
 Rscript raspr_score.R sample_data.csv results.csv
 ```
 ---
-To run through R, use this:
-```bash
+2. Within R Console
+```R
 source("raspr_score.R")
 calculate_raspr("input_file.csv", "output_file.csv")
 ```
@@ -55,4 +56,5 @@ calculate_raspr("input_file.csv", "output_file.csv")
 **Kavita Kundal**  
 **CG&T Lab, Indian Institute of Technology Hyderabad**
 
-contact for more details: cgntlab@gmail.com
+📩 Email: [cgntlab@gmail.com](mailto:cgntlab@gmail.com)
+
