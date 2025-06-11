@@ -30,6 +30,18 @@ pyradiomics path/to/XYZ_t1.nii.gz path/to/XYZ_seg.nii.gz -p pyradiomics_FE_file.
 ```
 
 ## Usage
+### Clone the Repository
+
+Run the following command in your terminal:
+
+```bash
+git clone [https://github.com/CGnTLab/tumorVQ.git](https://github.com/CGnTLab/RaSPr)
+```
+### Navigate to the Directory
+```bash
+cd RaSPr
+```
+
 1. Via Command Line
 ```bash
 Rscript raspr_score.R <input_file.csv> [output_file.csv]
@@ -39,13 +51,13 @@ Rscript raspr_score.R <input_file.csv> [output_file.csv]
 ---
 #### Example
 ```
-Rscript raspr_score.R sample_data.csv results.csv
+Rscript raspr_score.R example_run.csv results.csv
 ```
 ---
 2. Within R Console
 ```R
 source("raspr_score.R")
-calculate_raspr("input_file.csv", "output_file.csv")
+calculate_raspr("example_run.csv", "output_file.csv")
 ```
 - input_file.csv: Path to the input CSV file containing radiomic features.
 - output_file.csv : Path to save output in CSV format with RaSPr scores and classifications
