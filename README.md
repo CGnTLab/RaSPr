@@ -20,14 +20,26 @@ Install `tidyverse` if not already available:
 install.packages("tidyverse")
 ```
 ## Usage
+To run through terminal, use this:
 ```bash
 Rscript raspr_score.R <input_file.csv> [output_file.csv]
 ```
-<input_file.csv>: Path to the input CSV file containing radiomic features.
+- <input_file.csv>: Path to the input CSV file containing radiomic features.
+- [output_file.csv] (optional): Path to save the output CSV file with RaSPr scores and classifications.
 
-## Example
+#### Example
 ```
 Rscript raspr_score.R sample_data.csv results.csv
 ```
-[output_file.csv] (optional): Path to save the output CSV file with RaSPr scores and classifications.
 
+To run through R, use this:
+```bash
+source("raspr_score.R")
+calculate_raspr("input_file.csv", "output_file.csv")
+```
+- input_file.csv: Path to the input CSV file containing radiomic features.
+- output_file.csv : Path to save output in CSV format with RaSPr scores and classifications
+
+## Developer
+Kavita Kundal
+CG&T Lab, Indian Institute of Technology Hyderabad
