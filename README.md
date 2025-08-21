@@ -35,7 +35,7 @@ pyradiomics path/to/XYZ_t1.nii.gz path/to/XYZ_seg.nii.gz -p pyradiomics_FE_file.
 Run the following command in your terminal:
 
 ```bash
-git clone [https://github.com/CGnTLab/tumorVQ.git](https://github.com/CGnTLab/RaSPr)
+git clone https://github.com/CGnTLab/RaSPr.git
 ```
 ### Navigate to the Directory
 ```bash
